@@ -1,10 +1,9 @@
 package org.unico.sample.service;
 
+import java.util.List;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
-
-import org.unico.sample.model.GcdCalculatedVO;
 
 @WebService
 public interface GcdCalcService {
@@ -13,7 +12,7 @@ public interface GcdCalcService {
 	public int gcd();
 
 	@WebMethod
-	public GcdCalculatedVO gcdList();
+	public List<Integer> gcdList();
 
 	@WebMethod
 	public int gcdSum();

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.unico.sample.business.jms.JMSPoster;
 import org.unico.sample.database.GCDDAO;
-import org.unico.sample.model.GcdCalculatedVO;
 import org.unico.sample.model.GcdModel;
 
 public class GCDBO {
@@ -87,17 +86,16 @@ public class GCDBO {
 		return gcdValue;
 	}
 
-	public GcdCalculatedVO getGcdCompList(GcdCalculatedVO objVo){
+	public List<Integer> getGcdCompList(){
 		GCDDAO gcdDao = null;
 		List<Integer> gcdList = null;
 		try{
 			gcdDao = new GCDDAO();
 			gcdList = gcdDao.getComputedGcd();
-			objVo.setCalcGcdList(gcdList);
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
-		return objVo;
+		return gcdList;
 	}
 	
 	

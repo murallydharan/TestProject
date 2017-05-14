@@ -42,6 +42,6 @@ public class GCDResource {
 	public Response pushGcdData(GcdModel gcd ){
 		String status = null;
 		status = gcdService.pushGcdList(gcd);
-		return Response.status(200).entity(status).build();
+		return Response.status(200).entity(status).entity(gcd).build();
 	}	
 }

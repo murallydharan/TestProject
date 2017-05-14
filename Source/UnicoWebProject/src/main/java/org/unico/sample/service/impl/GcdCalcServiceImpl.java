@@ -1,5 +1,8 @@
 package org.unico.sample.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
@@ -20,11 +23,11 @@ public class GcdCalcServiceImpl implements GcdCalcService {
 
 	@Override
 	//@WebMethod
-	public GcdCalculatedVO gcdList() {
+	public List<Integer> gcdList() {
 		GCDBO objBo = new GCDBO();
-		GcdCalculatedVO objVo = new GcdCalculatedVO();
-		objVo = objBo.getGcdCompList(objVo);
-		return objVo;
+		List<Integer> gcdList = new ArrayList<Integer>();
+		gcdList = objBo.getGcdCompList();
+		return gcdList;
 	}
 
 	@Override
